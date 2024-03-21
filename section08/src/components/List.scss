@@ -1,0 +1,22 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    input {
+        &[type="search"] {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 15px 0;
+            &:focus {
+                outline: none;
+                border-bottom-color: rgb(37, 147, 255);
+            }
+        }
+    }
+    .todos_wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
