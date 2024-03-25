@@ -14,8 +14,9 @@ function App() {
 
   // 1. 마운트 : 시작
   useEffect(()=>{
-    // 컴포넌트가 마운트 됬을 때 한번 실행
+    // deps(배열 = deps)가 빈 값일 경우 최초 실행 후 실행 안됨
     console.log("mount")
+    console.log("-------------------------------------")
   }, [])
 
   // 2. 업데이트 : 변화, 리렌더링
@@ -27,12 +28,13 @@ function App() {
       return;
     }
     console.log("update")
+    console.log("============================================")
   })
 
   // 3. 언마운트 : 끝
   const onClickButton = (value) => {
     setCount(count + value);
-    console.log(count)
+    console.log("count : " + count)
   }
 
   return (

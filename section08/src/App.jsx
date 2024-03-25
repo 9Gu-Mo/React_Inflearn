@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Editor from './components/Editor'
 import List from './components/List'
 import Modal from './components/Modal'
+import DropDown from './components/DropDown'
 
 const mockData = [
   {
@@ -24,13 +25,25 @@ const mockData = [
     content: "노래 연습하기",
     date: new Date().getTime(),
   },
+  {
+    id: 3,
+    isDone: false,
+    content: "춤 연습하기",
+    date: new Date().getTime(),
+  },
 ]
 
 function App() {
   const [todos, setTodos] = useState(mockData);
   const [show, setShow] = useState(false);
-  
-  const idRef = useRef(3);
+  const [drop, setDrop] = useState(false);
+
+  const dropClick = () => {
+    setDrop(!drop);
+    console.log("dropdown")
+  }
+
+  const idRef = useRef(4);
 
   const onCreate = (content) => {
     const newTodo = {
@@ -61,6 +74,13 @@ function App() {
         }}
       >modal open</button>
       <Modal show={show} setShow={setShow} />
+      <button 
+        type='button'
+        onClick={dropClick}
+      >
+        {drop ? '▲' : '▼'}
+      </button>
+      {drop && <DropDown />}
     </div>
   )
 }

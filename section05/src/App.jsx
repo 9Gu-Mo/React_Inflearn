@@ -1,24 +1,37 @@
 import './App.css'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
+
+const Bulb = ({light}) => {
+  console.log(light)
+  return <div>{light === 'on'?<h1 style={{backgroundColor:"orange"}}>ON</h1>:<h1 style={{backgroundColor:"gray"}}>OFF</h1>}</div>
+}
 
 function App() {
-  const inpRef = useRef("");
-  const [state, inpState] = useState("")
-
-  const focus = () => {
-    console.log(inpRef.current)
-    if(state === "") {
-      alert("값을 입력하세요.")
-      inpRef.current.focus();
-    } else {
-      return;
-    }
-  }
+  const [count, setCount] = useState(0)
+  const [light, setLight] = useState("off")
 
   return (
     <>
-      <input ref={inpRef} type="text" value={state} />
-      <button type='button' onClick={focus}>로그인</button>
+      <div>
+        <Bulb light={light} />
+        <button 
+          type='button' 
+          style={{display:"block"}}
+          onClick={()=> {
+            setLight(light === 'off' ? 'on' : 'off')
+          }}
+        >
+          {light === 'off' ? '켜기' : '끄기'}
+        </button>
+      </div>
+      <div>
+        <div>{count}</div>
+        <button
+          onClick={()=> {
+            setCount(count+1)
+          }}
+        >+</button>
+      </div>
     </>
   )
 }

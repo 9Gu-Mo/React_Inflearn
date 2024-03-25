@@ -1,0 +1,15 @@
+@keyframes slide-fade-in-dropdown-animation {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.slide-fade-in-dropdown {
+    overflow: hidden;
+    animation: slide-fade-in-dropdown-animation .4s ease;
+    animation-fill-mode: forwards;
+}
