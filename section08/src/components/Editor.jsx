@@ -11,7 +11,7 @@ const Editor = ({ onCreate }) => {
     }
 
     const onKeyDown = (e) => {
-        if(e.keyCode === 13) {
+        if(e.key === 'Enter') {
             onSubmit();
         }
     }

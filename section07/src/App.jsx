@@ -11,7 +11,7 @@ function App() {
 
   // 초기값 false 설정은 아직 마운트가 시작되지 않았다는 의미
   const isMount = useRef(false);
-
+  // useEffect(콜백함수, 배열)
   // 1. 마운트 : 시작
   useEffect(()=>{
     // deps(배열 = deps)가 빈 값일 경우 최초 실행 후 실행 안됨

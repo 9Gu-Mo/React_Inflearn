@@ -1,5 +1,7 @@
 import './App.css'
 import { useState } from 'react'
+import Register from './components/Register'
+import HookExam from './components/HookExam'
 
 const Bulb = ({light}) => {
   console.log(light)
@@ -12,7 +14,7 @@ function App() {
 
   return (
     <>
-      <div>
+      {/* <div>
         <Bulb light={light} />
         <button 
           type='button' 
@@ -31,7 +33,9 @@ function App() {
             setCount(count+1)
           }}
         >+</button>
-      </div>
+      </div> */}
+      {/* <Register /> */}
+      <HookExam />
     </>
   )
 }

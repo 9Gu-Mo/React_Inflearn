@@ -1,58 +1,91 @@
-import { useState } from "react";
+import { useState, useRef } from "react"
 
 const Register = () => {
+    const [input, setInput] = useState({
+        name: "",
+        birth: "",
+        country: "",
+        bio: "",
+    });
 
-    const [name, setName] = useState('이름')
-    const [birth, setBirth] = useState('')
-    const [country, setCountry] = useState('')
-    
-    const onChangeName = (e) => {
-        setName(e.target.value)
+    const countRef = useRef(0);
+    // console.log(refObj.current);
+    const inpRef = useRef();
+
+    const onChange = (e) => {
+        countRef.current++;
+        console.log(countRef.current)
+        // console.log(e.target.name, e.target.value)
+        setInput({
+            ...input,
+            // tag의 name값 호출
+            // birth: e.target.value
+            [e.target.name]: e.target.value,
+        })
     }
 
-    const onChangeBirth = (e) => {
-        setBirth(e.target.value)
-    }
-
-    const onChangeCountry = (e) => {
-        setCountry(e.target.value)
+    const onSubmit = (e) => {
+        if(input.name === "") {
+            console.log(inpRef.current)
+            inpRef.current.focus();
+        }
     }
 
     return (
         <div>
             <div>
-                <input 
-                    value={name}
-                    onChange={onChangeName} 
+                <input
+                    ref={inpRef}
+                    name="name"
                     type="text" 
-                    placeholder={"이름"} 
+                    placeholder={"이름"}
+                    onChange={onChange}
+                    value={input.name}
                 />
-                {name}
+                {input.name}
             </div>
 
             <div>
                 <input
-                    value={birth}
-                    type="date"
-                    onChange={onChangeBirth}
+                    name="birth"
+                    type="date" 
+                    onChange={onChange}
+                    value={input.birth}
                 />
-                {birth}                
+                {input.birth}
+            </div>
+
+            <div>
+                <select
+                    name="country"
+                    value={input.country}
+                    onChange={onChange}
+                >
+                    <option value=""></option>
+                    <option value="kr">한국</option>
+                    <option value="us">미국</option>
+                    <option value="uk">영국</option>
+                </select>
+                {input.country}
+            </div>
+
+            <div>
+                <textarea
+                    name="bio"
+                    value={input.bio}
+                    onChange={onChange}
+                />
+                {input.bio}
             </div>
             
-            <div>
-                <select 
-                    value={country}
-                    onChange={onChangeCountry}
-                >
-                    <option></option>
-                    <option>한국</option>
-                    <option>미국</option>
-                    <option>영국</option>
-                </select>
-                {country}
-            </div>
+            <button 
+                type="button"
+                onClick={onSubmit}
+            >
+                제출
+            </button>
         </div>
     )
 }
 
-export default Register;
+export default Register
