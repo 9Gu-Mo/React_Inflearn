@@ -2,66 +2,65 @@ import { useState, useRef } from "react"
 
 const Register = () => {
     const [input, setInput] = useState({
-        name: "",
-        birth: "",
-        country: "",
-        bio: "",
-    });
+        name: '',
+        date: '',
+        country: '',
+        bio: ''
+    })
 
     const countRef = useRef(0);
-    // console.log(refObj.current);
-    const inpRef = useRef();
+    const inputRef = useRef()
 
     const onChange = (e) => {
         countRef.current++;
         console.log(countRef.current)
-        // console.log(e.target.name, e.target.value)
         setInput({
             ...input,
-            // tag의 name값 호출
-            // birth: e.target.value
-            [e.target.name]: e.target.value,
+            [e.target.name]: e.target.value
         })
     }
 
-    const onSubmit = (e) => {
-        if(input.name === "") {
-            console.log(inpRef.current)
-            inpRef.current.focus();
+    const onSubmit = () => {
+        if(input.name === '') {
+            // 이름을 입력하는 dom요소에 포커스
+            inputRef.current.focus();
         }
     }
 
     return (
         <div>
+            {/* 이름 */}
             <div>
                 <input
-                    ref={inpRef}
+                    ref={inputRef}
                     name="name"
-                    type="text" 
-                    placeholder={"이름"}
-                    onChange={onChange}
+                    placeholder="이름" 
+                    type="text"
                     value={input.name}
+                    onChange={onChange}
                 />
                 {input.name}
             </div>
 
+            {/* 날짜 */}
             <div>
                 <input
-                    name="birth"
+                    name="date"
                     type="date" 
                     onChange={onChange}
-                    value={input.birth}
+                    value={input.date}
                 />
-                {input.birth}
+                {input.date}
             </div>
 
+            {/* 국적 */}
             <div>
                 <select
                     name="country"
-                    value={input.country}
                     onChange={onChange}
+                    value={input.country}
                 >
-                    <option value=""></option>
+                    <option></option>
                     <option value="kr">한국</option>
                     <option value="us">미국</option>
                     <option value="uk">영국</option>
@@ -69,21 +68,17 @@ const Register = () => {
                 {input.country}
             </div>
 
+            {/* 자기소개 */}
             <div>
                 <textarea
                     name="bio"
-                    value={input.bio}
+                    value={input.bio} 
                     onChange={onChange}
                 />
                 {input.bio}
             </div>
-            
-            <button 
-                type="button"
-                onClick={onSubmit}
-            >
-                제출
-            </button>
+
+            <button onClick={onSubmit}>제출</button>
         </div>
     )
 }

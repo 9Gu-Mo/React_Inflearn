@@ -1,42 +1,31 @@
 import './App.css'
-import { useState } from 'react'
-import Register from './components/Register'
 import HookExam from './components/HookExam'
-
-const Bulb = ({light}) => {
-  console.log(light)
-  return <div>{light === 'on'?<h1 style={{backgroundColor:"orange"}}>ON</h1>:<h1 style={{backgroundColor:"gray"}}>OFF</h1>}</div>
-}
+import Register from './components/Register'
+import Button from './components/Button'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [light, setLight] = useState("off")
+  const buttonProps = {
+    text: "메일",
+    color: "red",
+    a: 1,
+    b: 2, 
+    c: 3
+  }
 
   return (
-    <>
+    <div>
       {/* <div>
-        <Bulb light={light} />
-        <button 
-          type='button' 
-          style={{display:"block"}}
-          onClick={()=> {
-            setLight(light === 'off' ? 'on' : 'off')
-          }}
-        >
-          {light === 'off' ? '켜기' : '끄기'}
-        </button>
-      </div>
-      <div>
-        <div>{count}</div>
-        <button
-          onClick={()=> {
-            setCount(count+1)
-          }}
-        >+</button>
+        spread operator
+        <Button {...buttonProps} />
+        <Button text={"카페"} />
+        <Button>
+          children props(컴포넌트도 props로 전달 가능)
+          <div>자식 요소</div>
+        </Button>
       </div> */}
-      {/* <Register /> */}
-      <HookExam />
-    </>
+      <Register />
+      {/* <HookExam /> */}
+    </div>
   )
 }
 
