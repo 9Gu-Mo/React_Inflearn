@@ -1,0 +1,124 @@
+.diary {
+  padding: 20px 0;
+  &_menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    select {
+      background-color: #ececec;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    button {
+      text-align: center;
+      display: block;
+      background-color: #000;
+      flex: 1;
+      color: #fff;
+      border-radius: 5px;
+      line-height: 49px;
+    }
+  }
+  &_item {
+    &_img {
+      min-width: 120px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      border-radius: 5px;
+      background: url('/src/assets/images/diary_item01.png') no-repeat center / contain;
+    }
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #e5e5e5;
+    &_con {
+      flex: 1;
+      cursor: pointer;
+      overflow: hidden;
+      line-height: normal;
+      strong {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      p {
+        font-size: 14px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        margin-top: 10px;
+      }
+    }
+    &_modify {
+      button {
+        background-color: #ececec;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    }
+  }
+  &_editor {
+    > * {
+      margin-bottom: 40px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      strong {
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
+        margin: 20px 0;
+      }
+    }
+    &_date {
+      input {
+        background-color: #ececec;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+      }
+    }
+    &_text {
+      textarea {
+        width: 100%;
+        resize: none;
+        height: 150px;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    }
+    &_emotion {
+      & > div {
+        display: flex;
+        gap: 10px;
+        & > div {
+          flex: 1;
+          input {
+            &:checked + label {
+              background-color: #000;
+              color: #fff;
+            }
+          } 
+          label {
+            display: block;
+            background-color: #fff;
+            color: #000;
+            text-align: center;
+            border: 1px solid #000;
+            line-height: 40px;
+          }
+        }
+      }
+    }
+  }
+}
