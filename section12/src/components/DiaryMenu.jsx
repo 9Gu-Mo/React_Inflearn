@@ -5,11 +5,7 @@ const DiaryMenu = () => {
         <option value="latest">최신순</option>
         <option value="old">오래된 순</option>
       </select>
-      <button 
-        type="button"
-      >
-        새 일기 쓰기
-      </button>
+      <a href="/DiaryEditor">새 일기 쓰기</a>
     </div>
   )
 }

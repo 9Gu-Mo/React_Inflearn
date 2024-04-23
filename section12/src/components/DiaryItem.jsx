@@ -4,7 +4,10 @@ const DiaryItem = () => {
       <div className="diary_item_img">
         
       </div>
-      <div className="diary_item_con">
+      <div 
+        className="diary_item_con"
+        
+      >
         <strong>2024. 04. 23</strong>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, magni laborum dolores quod totam cum esse pariatur doloremque? Laborum eius a ab beatae cumque laudantium fuga odio enim blanditiis quos.</p>
       </div>

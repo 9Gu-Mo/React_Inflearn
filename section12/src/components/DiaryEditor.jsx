@@ -58,16 +58,19 @@ const DiaryEditor = () => {
         />
       </div>
       <div className="diary_editor_btn">
-        <button 
-          type="button"
+        <a 
+          href="/"
         >
           취소하기
-        </button>
-        <button 
-          type="button"
+        </a>
+        <a 
+          href="/"
+          onClick={()=> {
+            alert("작성이 완료됬습니다.")
+          }}
         >
           작성완료
-        </button>
+        </a>
       </div>
     </div>
   )

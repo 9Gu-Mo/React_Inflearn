@@ -21,7 +21,6 @@ const Header = () => {
         이전
       </button>
       <strong>{year + '년'} {month + '월'}</strong>
-      <div>{dt.toLocaleDateString().substring(0, 7)}</div>
       <button 
         type="button"
         onClick={()=>{
