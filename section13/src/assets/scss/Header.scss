@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid rgb(226, 226, 226);
+  & > div {
+    display: flex;
+  }
+  &_center {
+    font-size: 25px;
+  }
+  & > div:not(&_center) {
+    
+  }
+}
