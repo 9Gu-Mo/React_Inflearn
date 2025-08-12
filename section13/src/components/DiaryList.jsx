@@ -1,5 +1,5 @@
 import Button from './Button'
-import '../assets/scss/DiaryList.scss'
+import '@/styles/components/DiaryList.scss'
 import DiaryItem from './DiaryItem'
 import {useNavigate} from 'react-router-dom'
 import {useState} from 'react'

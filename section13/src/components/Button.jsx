@@ -1,4 +1,4 @@
-import '../assets/scss/Button.scss'
+import '@/styles/layout/Button.scss'
 
 const Button = ({text, type, onClick}) => {
   return (

@@ -1,4 +1,4 @@
-import '../assets/scss/Editor.scss'
+import '@/styles/components/Editor.scss'
 import EmotionItem from './EmotionItem'
 import Button from './Button'
 import {useState} from 'react';

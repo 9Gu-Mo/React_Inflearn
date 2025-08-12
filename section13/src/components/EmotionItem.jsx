@@ -1,4 +1,4 @@
-import '../assets/scss/Editor.scss'
+import '@/styles/components/Editor.scss'
 import {getEmotionImage} from '../util/get-emotion-image'
 
 const EmotionItem = ({emotionId, emotionName, isSelected, onClick}) => {

@@ -1,4 +1,4 @@
-import '../assets/scss/Header.scss'
+import '@/styles/layout/Header.scss'
 
 const Header = ({title, leftChild, rightChild}) => {
   return (
