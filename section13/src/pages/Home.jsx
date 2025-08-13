@@ -5,6 +5,8 @@ import Header from '../components/Header'
 import Button from '../components/Button'
 import DiaryList from '../components/DiaryList'
 
+import style from '@/styles/pages/home.module.scss';
+
 const getMonthlyData = (pivotDate, data) => {
   const beginTime = new Date(
     pivotDate.getFullYear(), 
@@ -43,7 +45,7 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <>
       <Header 
         title={
           `${pivotDate.getFullYear()}년 ${pivotDate.getMonth() + 1}월`
@@ -64,7 +66,10 @@ const Home = () => {
       <DiaryList 
         data={monthlyData}
       />
-    </div>
+      <div className={style.test}>
+        mixin 테스트
+      </div>
+    </>
   )
 }
 

@@ -83,7 +83,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="wrap">
       <DiaryStateContext.Provider value={data}>
         <DiaryDispatchContext.Provider
           value={{
@@ -101,7 +101,6 @@ function App() {
           </Routes>
         </DiaryDispatchContext.Provider>
       </DiaryStateContext.Provider>
-      
     </div>
   )
 }
